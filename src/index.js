@@ -24,7 +24,7 @@ const startTime = () => {
 
 import {fetchPost} from './modules/network';
 import HSLData from './modules/hsl-data';
-import bodyParser from 'body-parser';
+
 
 
 /**
@@ -52,8 +52,19 @@ const displayHSLDataByStopId = (container, stopId) => {
   // TODO: error handling, what happens when new data not available?
 };
 
+/* const queryDataByLocation = () => {
+    const stopElement = document.createElement('div');
+    const queryData = HSLData.queryDataByLocation();
+    fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
+        console.log('hsl data response', response.data.nearest.edges.node.place.stop);
+    });
+}; */
+
 const container = document.querySelector('.hsl-data');
 container.innerHTML = '';
 // Fetch and show HSL data
-displayHSLDataByStopId(container, 4150267);
-displayHSLDataByStopId(container, 4150250);
+displayHSLDataByStopId(container, 4150296); // Leiritie 2
+displayHSLDataByStopId(container, 4150201); // Leiritie
+displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
+displayHSLDataByStopId(container, 4150551); // Myyrmäki
+//queryDataByLocation(60.19915, 24.94089);
