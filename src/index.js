@@ -22,8 +22,19 @@ const startTime = () => {
 
   startTime();
 
+  var MyDate = new Date();
+  var MyDateString;
+  
+  MyDateString = MyDate.getFullYear() + '-'
+    + ('0' + (MyDate.getMonth()+1)).slice(-2) + '-'
+     + ('0' + MyDate.getDate()).slice(-2);
+
+     console.log(MyDateString);
+  
+
 import {fetchPost} from './modules/network';
 import HSLData from './modules/hsl-data';
+import sodexoData from './modules/sodexo-lunch-data';
 
 
 
@@ -39,7 +50,7 @@ const displayHSLDataByStopId = (container, stopId) => {
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
     console.log('hsl data response', response.data.stop);
     const stop = response.data.stop;
-    stopElement.innerHTML = `<h3>Next rides from ${stop.name}</h3><ul>`;
+    stopElement.innerHTML = `<h3>${stop.name}</h3><ul>`;
     for (const ride of stop.stoptimesWithoutPatterns) {
       stopElement.innerHTML += `<li>Line <b>${ride.trip.routeShortName}</b>
       to: ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}
@@ -51,6 +62,12 @@ const displayHSLDataByStopId = (container, stopId) => {
   });
   // TODO: error handling, what happens when new data not available?
 };
+
+sodexoData.getSodexoLunchMenu(MyDateString)
+ .then(data => console.log('ruokalista', data));
+
+
+
 
 /* const queryDataByLocation = () => {
     const stopElement = document.createElement('div');
