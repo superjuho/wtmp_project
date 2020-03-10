@@ -18,12 +18,6 @@ header {
     height: 15vh;
 }
 
-.date {
-    height: 10vh;
-    font-size: 2.5vw;
-    font-family: 'Karla', sans-serif;
-}
-
 .container_xl {
     display: flex;
     flex-direction: row;
