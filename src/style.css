@@ -1,5 +1,56 @@
 body {
-    margin: 0;
+    margin: 0 4vw 1vh 4vw;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 25vh; 
+}
+.logo {
+    position: relative;
+}
+
+#logo_svg {
+    width: 25vw;
+    height: 15vh;
+    position: absolute;
+    left: 1vw;
+    top: 1vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.container_small {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.window_big {
+    display: inline-block;
+    width: 60vw;
+    height: 65vh;
+    border: 2px solid teal;
+    border-radius: 4px;
+}
+
+.window_small_1 {
+    width: 30vw;
+    height: 31vh;
+    border: 2px solid lightseagreen;
+    border-radius: 4px;
+}
+
+.window_small_2 {
+    width: 30vw;
+    height: 31vh;
+    border: 2px solid lightseagreen;
+    border-radius: 4px;
 }
