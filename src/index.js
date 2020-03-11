@@ -73,13 +73,13 @@ const getLunch = () => {
 sodexoData.getSodexoLunchMenu(dateString)
  .then((data) => {
      var i, lunchMenu = [];
-     console.log(data.courses);
      const lunchElement = document.createElement('div');
      lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
      for (i in data.courses) {
-        lunchMenu[i] =`<h4 class="category">` + data.courses[i].category + `</h4>` + `<br>` + `<div class="mealTitle">` + data.courses[i].title_fi + `</div>` + `<br>` + `<p class="price">` + data.courses[i].price + `</p>` +` ` + data.courses[i].properties;
-        
-        console.log(lunchMenu[i]);
+        lunchMenu[i] =`<h4 class="category">` + data.courses[i].category + `</h4>` 
+        + `<div class="mealTitle">` + data.courses[i].title_en + `</div>` 
+        + `<div class="properties">` + `<p class="price">` + data.courses[i].price + `</p>` 
+        + data.courses[i].properties + `</div>`;
      }
 
      lunchElement.innerHTML += lunchMenu.join('<br>');
@@ -101,10 +101,39 @@ sodexoData.getSodexoLunchMenu(dateString)
 const container = document.querySelector('.hsl-data');
 const lunchContainer = document.querySelector('.lunchContainer');
 container.innerHTML = '';
+lunchContainer.innerHTML = '';
 // Fetch and show HSL data
+/*displayHSLDataByStopId(container, 4150296); // Leiritie 2
+displayHSLDataByStopId(container, 4150201); // Leiritie
+displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
+displayHSLDataByStopId(container, 4150551); // Myyrmäki
+getLunch();*/
+
+/*const updateShit = () => {
+container.innerHTML = '';
+lunchContainer.innerHTML = '';
+updateDate();
 displayHSLDataByStopId(container, 4150296); // Leiritie 2
 displayHSLDataByStopId(container, 4150201); // Leiritie
 displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
 displayHSLDataByStopId(container, 4150551); // Myyrmäki
 getLunch();
-//queryDataByLocation(60.19915, 24.94089);
+console.log("Shit updated");
+alert("shit updated!");
+} */
+
+const update = () => {
+setInterval(function updateShit(){
+    container.innerHTML = '';
+lunchContainer.innerHTML = '';
+updateDate();
+displayHSLDataByStopId(container, 4150296); // Leiritie 2
+displayHSLDataByStopId(container, 4150201); // Leiritie
+displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
+displayHSLDataByStopId(container, 4150551); // Myyrmäki
+getLunch();
+console.log("Shit updated");
+}, 10000);
+}
+
+update();
