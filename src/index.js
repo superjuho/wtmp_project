@@ -70,13 +70,16 @@ const displayHSLDataByStopId = (container, stopId) => {
 };
 
 const getLunch = () => {
-sodexoData.getSodexoLunchMenu(MyDateString)
+sodexoData.getSodexoLunchMenu(dateString)
  .then((data) => {
      var i, lunchMenu = [];
+     console.log(data.courses);
      const lunchElement = document.createElement('div');
      lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
      for (i in data.courses) {
-        lunchMenu[i] = data.courses[i];
+        lunchMenu[i] =`<h4 class="category">` + data.courses[i].category + `</h4>` + `<br>` + `<div class="mealTitle">` + data.courses[i].title_fi + `</div>` + `<br>` + `<p class="price">` + data.courses[i].price + `</p>` +` ` + data.courses[i].properties;
+        
+        console.log(lunchMenu[i]);
      }
 
      lunchElement.innerHTML += lunchMenu.join('<br>');
