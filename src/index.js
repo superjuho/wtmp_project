@@ -41,6 +41,7 @@ const startTime = () => {
 import {fetchPost} from './modules/network';
 import HSLData from './modules/hsl-data';
 import sodexoData from './modules/sodexo-lunch-data';
+import carouselMagic from './modules/carousel';
 
 
 
@@ -100,6 +101,7 @@ sodexoData.getSodexoLunchMenu(dateString)
 
 const container = document.querySelector('.hsl-data');
 const lunchContainer = document.querySelector('.lunchContainer');
+const bulletinContainer = document.querySelector('.bulletinContaier');
 container.innerHTML = '';
 lunchContainer.innerHTML = '';
 // Fetch and show HSL data
@@ -123,17 +125,19 @@ alert("shit updated!");
 } */
 
 const update = () => {
-setInterval(function updateShit(){
+  setInterval(function updateShit(){
     container.innerHTML = '';
-lunchContainer.innerHTML = '';
-updateDate();
-displayHSLDataByStopId(container, 4150296); // Leiritie 2
-displayHSLDataByStopId(container, 4150201); // Leiritie
-displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
-displayHSLDataByStopId(container, 4150551); // Myyrmäki
-getLunch();
-console.log("Shit updated");
-}, 10000);
-}
+    lunchContainer.innerHTML = '';
+    bulletinContainer.innerHTML = '';
+    updateDate();
+    carouselMagic.carousel();
+    displayHSLDataByStopId(container, 4150296); // Leiritie 2
+    displayHSLDataByStopId(container, 4150201); // Leiritie
+    displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
+    displayHSLDataByStopId(container, 4150551); // Myyrmäki
+    getLunch();
+      console.log("Shit updated");
+    }, 10000);
+}  
 
 update();
