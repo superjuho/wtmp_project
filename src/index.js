@@ -44,7 +44,22 @@ import sodexoData from './modules/sodexo-lunch-data';
 import carouselMagic from './modules/carousel';
 
 
-
+const displayHSLDataByLocation = () => {
+  console.log("täällä ollaan");
+  const stopElement = document.createElement('div');
+  const queryData = HSLData.queryDataByLocation;
+  fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
+      console.log('hsl data location response', response.data.stopsByRadius.edges);
+      var i, nearStops = [];
+      const answer = response.data.stopsByRadius.edges;
+      for (i in answer) {
+        nearStops[i] = answer[i].node.stop.name + ' Line ' + answer[i].node.stop.stoptimesWithoutPatterns[0].;
+        
+        
+      };
+      console.log(nearStops.length);
+  });
+}
 /**
  * Display HSL ride data of a specific stop
  *
@@ -150,4 +165,5 @@ const update = () => {
     }, 10000);
 }  
 
+displayHSLDataByLocation();
 update();
