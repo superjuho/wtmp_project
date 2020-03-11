@@ -89,6 +89,14 @@ sodexoData.getSodexoLunchMenu(dateString)
  });
 }
 
+const bulletin = () => {
+  const bullet = '<img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>';
+  const bulletElement = document.createElement('div');
+  const bulletinContainer = document.querySelector('.bulletinContainer');
+  bulletElement.innerHTML = bullet;
+  bulletinContainer.appendChild(bulletElement);
+}
+
 
 
 
@@ -137,6 +145,7 @@ const update = () => {
     displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
     displayHSLDataByStopId(container, 4150551); // Myyrmäki
     getLunch();
+    bulletin();
       console.log("Shit updated");
     }, 10000);
 }  

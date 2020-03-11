@@ -22,9 +22,8 @@ const queryDataByName = `{
 }`;
 
 // a test query with hardcoded coordinates of Myyrmäki campus
-const queryDataByLocation = (lat, lon) => { 
-    return `{
-  stopsByRadius(lat: ${lat}, lon: ${lon}, radius: 600, first: 10) {
+const queryDataByLocation = `{
+  stopsByRadius(lat: ${60.2585632}, lon: ${24.8446747}, radius: 600, first: 10) {
     edges {
       node {
         stop {
@@ -59,8 +58,6 @@ const queryDataByLocation = (lat, lon) => {
     }
   }
 }`;
-
-};
 
 /**
  * https://digitransit.fi/en/developers/apis/1-routing-api/stops/#query-scheduled-departure-and-arrival-times-of-a-stop
