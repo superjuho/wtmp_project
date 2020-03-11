@@ -5,17 +5,24 @@ body {
 }
 
 header {
-    height: 25vh; 
+    height: 20vh; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1vw;
+    flex-grow: 1;
+}
+.header h1 {
+    font-size: 3vw;
+    width: 25vw;
+}
+.date {
+    font-size: 3vw;
+    font-family: 'Karla', sans-serif;
 }
 
-#logo_svg {
+.logo {
     width: 25vw;
-    height: 15vh;
 }
 
 .container_xl {
@@ -34,25 +41,41 @@ header {
 .window_big {
     display: inline-block;
     width: 60vw;
-    height: 65vh;
-    border: 2px solid teal;
+    height: 70vh;
+    border: 2px solid orange;
     border-radius: 4px;
+    box-shadow: 4px 6px 18px #888888;
 }
 
 .hsl-data {
-    padding-left: 1vw;
+    width: 60vw;
+    height: 65vh;
+    padding-left:2vw;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    overflow: hidden;
+}
+
+.hsl-data div {
+    width: 30vw;
+    overflow: hidden;
 }
 
 .window_small_1 {
     width: 30vw;
-    height: 31vh;
-    border: 2px solid lightseagreen;
+    height: 33vh;
+    border: 2px solid grey;
     border-radius: 4px;
+    box-shadow: 4px 6px 18px #888888;
 }
 
 .window_small_2 {
     width: 30vw;
-    height: 31vh;
-    border: 2px solid lightseagreen;
+    height: 33vh;
+    border: 2px solid grey;
     border-radius: 4px;
+    box-shadow: 4px 6px 18px #888888;
 }
