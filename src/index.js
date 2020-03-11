@@ -46,18 +46,29 @@ import carouselMagic from './modules/carousel';
 
 const displayHSLDataByLocation = () => {
   console.log("täällä ollaan");
-  const stopElement = document.createElement('div');
+  const busStopElement = document.createElement('div');
+  const busses = document.querySelector('.hsl-data');
   const queryData = HSLData.queryDataByLocation;
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
       console.log('hsl data location response', response.data.stopsByRadius.edges);
       var i, nearStops = [];
       const answer = response.data.stopsByRadius.edges;
       for (i in answer) {
-        nearStops[i] = answer[i].node.stop.name + ' Line ' + answer[i].node.stop.stoptimesWithoutPatterns;
+        nearStops[i] = `<h4>${answer[i].node.stop.name}</h4>`;
+        console.log(answer[i].node.stop.name);
+        let y = 0;
+        for (let x = 0; x < 3; x++) {
+          nearStops[i] += `<br><b>${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.routeShortName}</b>` 
+          + ' to ' + answer[i].node.stop.stoptimesWithoutPatterns[y].trip.tripHeadsign + ' '
+          + HSLData.getTime(answer[i].node.stop.stoptimesWithoutPatterns[y].realtimeDeparture);
+          y++;
+        }
         
         
       };
-      console.log(nearStops.length);
+      
+      busStopElement.innerHTML += nearStops.join('<br>');
+      busses.appendChild(busStopElement);
   });
 }
 /**
@@ -155,15 +166,14 @@ const update = () => {
     lunchContainer.innerHTML = '';
     bulletinContainer.innerHTML = '';
     updateDate();
-    displayHSLDataByStopId(container, 4150296); // Leiritie 2
-    displayHSLDataByStopId(container, 4150201); // Leiritie
     displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
     displayHSLDataByStopId(container, 4150551); // Myyrmäki
+    displayHSLDataByLocation();
     getLunch();
     bulletin();
       console.log("Shit updated");
     }, 10000);
 }  
 
-displayHSLDataByLocation();
+
 update();
