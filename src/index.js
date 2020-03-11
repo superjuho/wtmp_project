@@ -22,14 +22,20 @@ const startTime = () => {
 
   startTime();
 
-  var MyDate = new Date();
-  var MyDateString;
+  var date = new Date();
+  var dateString;
   
-  MyDateString = MyDate.getFullYear() + '-'
-    + ('0' + (MyDate.getMonth()+1)).slice(-2) + '-'
-     + ('0' + MyDate.getDate()).slice(-2);
+  const updateDate = () => {
+  dateString = date.getFullYear() + '-'
+    + ('0' + (date.getMonth()+1)).slice(-2) + '-'
+     + ('0' + date.getDate()).slice(-2);
 
-     console.log(MyDateString);
+     console.log(dateString);
+     return dateString; 
+  }
+
+  updateDate();
+  console.log("udated the date", dateString);
   
 
 import {fetchPost} from './modules/network';
@@ -50,7 +56,7 @@ const displayHSLDataByStopId = (container, stopId) => {
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
     console.log('hsl data response', response.data.stop);
     const stop = response.data.stop;
-    stopElement.innerHTML = `<h3>${stop.name}</h3><ul>`;
+    stopElement.innerHTML = `<h6>Pysäkki</h6><h3>${stop.name}</h3><ul>`;
     for (const ride of stop.stoptimesWithoutPatterns) {
       stopElement.innerHTML += `<li>Line <b>${ride.trip.routeShortName}</b>
       to: ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}
@@ -63,8 +69,20 @@ const displayHSLDataByStopId = (container, stopId) => {
   // TODO: error handling, what happens when new data not available?
 };
 
+const getLunch = () => {
 sodexoData.getSodexoLunchMenu(MyDateString)
- .then(data => console.log('ruokalista', data));
+ .then((data) => {
+     var i, lunchMenu = [];
+     const lunchElement = document.createElement('div');
+     lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
+     for (i in data.courses) {
+        lunchMenu[i] = data.courses[i];
+     }
+
+     lunchElement.innerHTML += lunchMenu.join('<br>');
+     lunchContainer.appendChild(lunchElement);
+ });
+}
 
 
 
@@ -78,10 +96,12 @@ sodexoData.getSodexoLunchMenu(MyDateString)
 }; */
 
 const container = document.querySelector('.hsl-data');
+const lunchContainer = document.querySelector('.lunchContainer');
 container.innerHTML = '';
 // Fetch and show HSL data
 displayHSLDataByStopId(container, 4150296); // Leiritie 2
 displayHSLDataByStopId(container, 4150201); // Leiritie
 displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
 displayHSLDataByStopId(container, 4150551); // Myyrmäki
+getLunch();
 //queryDataByLocation(60.19915, 24.94089);
