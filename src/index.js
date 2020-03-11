@@ -75,6 +75,7 @@ sodexoData.getSodexoLunchMenu(dateString)
  .then((data) => {
      var i, lunchMenu = [];
      const lunchElement = document.createElement('div');
+     const lunchContainer = document.querySelector('.lunchContainer');
      lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
      for (i in data.courses) {
         lunchMenu[i] =`<h4 class="category">` + data.courses[i].category + `</h4>` 
@@ -99,11 +100,8 @@ sodexoData.getSodexoLunchMenu(dateString)
     });
 }; */
 
-const container = document.querySelector('.hsl-data');
-const lunchContainer = document.querySelector('.lunchContainer');
-const bulletinContainer = document.querySelector('.bulletinContaier');
-container.innerHTML = '';
-lunchContainer.innerHTML = '';
+
+
 // Fetch and show HSL data
 /*displayHSLDataByStopId(container, 4150296); // Leiritie 2
 displayHSLDataByStopId(container, 4150201); // Leiritie
@@ -126,11 +124,14 @@ alert("shit updated!");
 
 const update = () => {
   setInterval(function updateShit(){
+    carouselMagic.carousel();
+    const container = document.querySelector('.hsl-data');
+    const lunchContainer = document.querySelector('.lunchContainer');
+    const bulletinContainer = document.querySelector('.bulletinContainer');
     container.innerHTML = '';
     lunchContainer.innerHTML = '';
     bulletinContainer.innerHTML = '';
     updateDate();
-    carouselMagic.carousel();
     displayHSLDataByStopId(container, 4150296); // Leiritie 2
     displayHSLDataByStopId(container, 4150201); // Leiritie
     displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
