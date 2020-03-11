@@ -53,7 +53,7 @@ const displayHSLDataByLocation = () => {
       var i, nearStops = [];
       const answer = response.data.stopsByRadius.edges;
       for (i in answer) {
-        nearStops[i] = answer[i].node.stop.name + ' Line ' + answer[i].node.stop.stoptimesWithoutPatterns[0].;
+        nearStops[i] = answer[i].node.stop.name + ' Line ' + answer[i].node.stop.stoptimesWithoutPatterns;
         
         
       };
@@ -74,9 +74,9 @@ const displayHSLDataByStopId = (container, stopId) => {
     const stop = response.data.stop;
     stopElement.innerHTML = `<h6>Pysäkki</h6><h3>${stop.name}</h3><ul>`;
     for (const ride of stop.stoptimesWithoutPatterns) {
-      stopElement.innerHTML += `<li>Line <b>${ride.trip.routeShortName}</b>
-      to: ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}
-      at ${HSLData.getTime(ride.scheduledDeparture)}
+      stopElement.innerHTML += `<b>${ride.trip.routeShortName}</b>
+       ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}
+       ${HSLData.getTime(ride.scheduledDeparture)} <br>
       </li>`;
     }
     stopElement.innerHTML += `</ul>`;
