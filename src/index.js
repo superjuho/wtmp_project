@@ -46,7 +46,8 @@ import carouselMagic from './modules/carousel';
 
 const displayHSLDataByLocation = () => {
   console.log("täällä ollaan");
-  const busStopElement = document.createElement('div class="busStopElement"');
+  const busStopElement = document.createElement('div');
+  busStopElement.className = "busStopElement";
   const busses = document.querySelector('.hsl-data');
   const queryData = HSLData.queryDataByLocation;
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
@@ -78,7 +79,8 @@ const displayHSLDataByLocation = () => {
  * @param {number} stopId - id number of the hsl stop
  */
 const displayHSLDataByStopId = (container, stopId) => {
-  const stopElement = document.createElement('div class="stopElement"');
+  const stopElement = document.createElement('div');
+  stopElement.className = "stopElement";
   const queryData = HSLData.getQueryForNextRidesByStopId(stopId);
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
     console.log('hsl data response', response.data.stop);
