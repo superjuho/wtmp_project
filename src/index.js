@@ -99,24 +99,24 @@ const displayHSLDataByStopId = (container, stopId) => {
 };
 
 const getLunch = () => {
-sodexoData.getSodexoLunchMenu(dateString)
- .then((data) => {
-     var i, lunchMenu = [];
-     const lunchElement = document.createElement('div');
-     lunchElement.className = "lunchElement";
-     const lunchContainer = document.querySelector('.lunchContainer');
-     lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
-     for (i in data.courses) {
-        lunchMenu[i] =`<div class="meal"><h4 class="category">` + data.courses[i].category + `</h4>` 
-        + `<div class="mealTitle">` + data.courses[i].title_en + `</div>` 
-        + `<div class="properties">` + `<p class="price">` + data.courses[i].price + `</p>` 
-        + data.courses[i].properties + `</div></div>`;
-     }
-
-     lunchElement.innerHTML += lunchMenu.join('<br>');
-     lunchContainer.appendChild(lunchElement);
- });
-}
+  sodexoData.getSodexoLunchMenu(dateString)
+   .then((data) => {
+       var i, lunchMenu = [];
+       const lunchElement = document.createElement('div');
+       lunchElement.className = "lunchElement";
+       const lunchContainer = document.querySelector('.lunchContainer');
+       lunchElement.innerHTML = `<h3 class="menuHeader">Lunch menu</h3>`;
+       for (i in data.courses) {
+          lunchMenu[i] =`<div class="meal"><h4 class="category">` + data.courses[i].category + `</h4>` 
+          + `<div class="mealTitle">` + data.courses[i].title_en + `</div>` 
+          + `<div class="properties">` + `<p class="price">` + data.courses[i].price 
+          + data.courses[i].properties + ` ` +`</p>` + `</div></div>`;
+       }
+  
+       lunchElement.innerHTML += lunchMenu.join(' ');
+       lunchContainer.appendChild(lunchElement);
+   });
+  }
 
 const bulletin = () => {
   const bullet = '<img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>';
