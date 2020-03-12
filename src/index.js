@@ -83,7 +83,7 @@ const displayHSLDataByStopId = (container, stopId) => {
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
     console.log('hsl data response', response.data.stop);
     const stop = response.data.stop;
-    stopElement.innerHTML = `<h6>Pysäkki</h6><h3>${stop.name}</h3><ul>`;
+    stopElement.innerHTML = `<h3>${stop.name}</h3><ul>`;
     for (const ride of stop.stoptimesWithoutPatterns) {
       stopElement.innerHTML += `<b>${ride.trip.routeShortName}</b>
        ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}
@@ -104,10 +104,10 @@ sodexoData.getSodexoLunchMenu(dateString)
      const lunchContainer = document.querySelector('.lunchContainer');
      lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
      for (i in data.courses) {
-        lunchMenu[i] =`<h4 class="category">` + data.courses[i].category + `</h4>` 
+        lunchMenu[i] =`<div class="meal"><h4 class="category">` + data.courses[i].category + `</h4>` 
         + `<div class="mealTitle">` + data.courses[i].title_en + `</div>` 
         + `<div class="properties">` + `<p class="price">` + data.courses[i].price + `</p>` 
-        + data.courses[i].properties + `</div>`;
+        + data.courses[i].properties + `</div></div>`;
      }
 
      lunchElement.innerHTML += lunchMenu.join('<br>');
@@ -166,9 +166,9 @@ const update = () => {
     lunchContainer.innerHTML = '';
     bulletinContainer.innerHTML = '';
     updateDate();
+    displayHSLDataByLocation();
     displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
     displayHSLDataByStopId(container, 4150551); // Myyrmäki
-    displayHSLDataByLocation();
     getLunch();
     bulletin();
       console.log("Shit updated");
