@@ -141,7 +141,16 @@ header {
 }
 
 .lunchElement {
-    display: flex;
+    
+}
+
+.category {
+    margin: 0;
+    
+}
+
+.price {
+    margin: 0;
 }
 
 .weatherwidget-io {
@@ -170,6 +179,14 @@ header {
     width: 30vw;
     height: 34vh;
     padding-left: 1vw;
+}
+
+.lunchContainer {
+    margin:0;
+}
+
+.lunchMenu {
+    margin:0;
 }
 
 .window_big > .lunchContainer div div{

@@ -105,15 +105,15 @@ sodexoData.getSodexoLunchMenu(dateString)
      const lunchElement = document.createElement('div');
      lunchElement.className = "lunchElement";
      const lunchContainer = document.querySelector('.lunchContainer');
-     lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
+     lunchElement.innerHTML = `<h3 class="menuHeader">Lunch menu</h3>`;
      for (i in data.courses) {
         lunchMenu[i] =`<div class="meal"><h4 class="category">` + data.courses[i].category + `</h4>` 
         + `<div class="mealTitle">` + data.courses[i].title_en + `</div>` 
-        + `<div class="properties">` + `<p class="price">` + data.courses[i].price + `</p>` 
-        + data.courses[i].properties + `</div></div>`;
+        + `<div class="properties">` + `<p class="price">` + data.courses[i].price 
+        + data.courses[i].properties + ` ` +`</p>` + `</div></div>`;
      }
 
-     lunchElement.innerHTML += lunchMenu.join('<br>');
+     lunchElement.innerHTML += lunchMenu.join(' ');
      lunchContainer.appendChild(lunchElement);
  });
 }
