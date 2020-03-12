@@ -68,7 +68,7 @@ const displayHSLDataByLocation = () => {
         
       };
       
-      busStopElement.innerHTML += nearStops.join('<br>');
+      busStopElement.innerHTML += nearStops.join(' ');
       busses.appendChild(busStopElement);
   });
 }
