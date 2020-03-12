@@ -103,6 +103,7 @@ sodexoData.getSodexoLunchMenu(dateString)
  .then((data) => {
      var i, lunchMenu = [];
      const lunchElement = document.createElement('div');
+     lunchElement.className = "lunchElement";
      const lunchContainer = document.querySelector('.lunchContainer');
      lunchElement.innerHTML = `<h3>Ruokalista</h3>`;
      for (i in data.courses) {
