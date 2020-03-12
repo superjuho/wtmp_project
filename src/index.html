@@ -33,7 +33,7 @@
         </div>
         <h1>Myyrmäki</h1>
         <div class="weather">
-
+            <a class="weatherwidget-io" href="https://forecast7.com/en/60d2925d04/vantaa/" data-label_1="VANTAA" data-label_2="WEATHER" data-font="Roboto" data-icons="Climacons Animated" data-mode="Current" data-theme="pure" data-basecolor="#" data-shadow="rgba(1, 1, 1, 0.20)" data-accent="rgba(1, 1, 1, 0.80)" >VANTAA WEATHER</a>
         </div>
         <div class="date"> 
         </div>
@@ -56,5 +56,15 @@
             </div>
         </div>
     </main>
+    <script>!(function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js");</script>
 </body>
 </html>

@@ -55,7 +55,7 @@ const displayHSLDataByLocation = () => {
       var i, nearStops = [];
       const answer = response.data.stopsByRadius.edges;
       for (i in answer) {
-        nearStops[i] = `<h4 class="busStopName">${answer[i].node.stop.name}</h4>`;
+        nearStops[i] = `<div class="busdiv"><h4 class="busStopName">${answer[i].node.stop.name}</h4>`;
         console.log(answer[i].node.stop.name);
         let y = 0;
         for (let x = 0; x < 3; x++) {
@@ -64,6 +64,7 @@ const displayHSLDataByLocation = () => {
           + HSLData.getTime(answer[i].node.stop.stoptimesWithoutPatterns[y].realtimeDeparture);
           y++;
         }
+        nearStops[i] += '</div>';
         
         
       };
@@ -85,14 +86,13 @@ const displayHSLDataByStopId = (container, stopId) => {
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
     console.log('hsl data response', response.data.stop);
     const stop = response.data.stop;
-    stopElement.innerHTML = `<h4 class="trainStopName">${stop.name}</h4><ul>`;
+    stopElement.innerHTML = `<h4 class="trainStopName">${stop.name}</h4>`;
     for (const ride of stop.stoptimesWithoutPatterns) {
       stopElement.innerHTML += `<b>${ride.trip.routeShortName}</b>
        ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}
        ${HSLData.getTime(ride.scheduledDeparture)} <br>
       </li>`;
     }
-    stopElement.innerHTML += `</ul>`;
     container.appendChild(stopElement);
   });
   // TODO: error handling, what happens when new data not available?

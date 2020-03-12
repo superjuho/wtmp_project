@@ -41,12 +41,13 @@ header {
 
 
 .window_big {
-    display: inline-block;
+    display: flex;
     width: 55vw;
     height: 70vh;
     border: 2px solid orange;
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
+    overflow: hidden;
 }
 
 .window_small_1 {
@@ -55,6 +56,7 @@ header {
     border: 2px solid grey;
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
+    overflow: hidden;
 }
 
 .window_small_2 {
@@ -63,9 +65,11 @@ header {
     border: 2px solid grey;
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
+    overflow: hidden;
 }
 
 .window_big > .hsl-data {
+    padding: 10px;
     width: 55vw;
     height: 70vh;
     background-color: #007AC9;
@@ -73,18 +77,31 @@ header {
     flex-direction: column;
     flex-flow: column wrap;
     align-content: flex-start;
-    overflow: hidden;
-    font-size: 24px;
+    font-size: 1.2rem;
 }
-.window_big > .hsl-data div {
+
+.stopElement {
+    float: right;
+}
+
+.window_big > .hsl-data > .stopElement {
+    position: relative;
     width: 20vw;
-    height: 30vh;
-    overflow: hidden;
+    /*height: 30vh;*/
     margin-left: 2vw;
 }
 
-.window_big > .trainStopName {
+.trainStopName {
     margin: 0;
+}
+
+.busStopName {
+    margin: 0;
+}
+
+.busStopElement {
+    display: flex;
+    width: 200px;
 }
 
 .window_small_1 > .hsl-data {
@@ -121,6 +138,14 @@ header {
     width: 15vw;
     height: 15vh;
     margin-left: 1vw;
+}
+
+.lunchElement {
+    display: flex;
+}
+
+.weatherwidget-io {
+ width: 420px;
 }
 
 .window_big > .lunchContainer {
