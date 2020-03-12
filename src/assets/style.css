@@ -4,6 +4,14 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+#backgroundVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+
 header {
     height: 20vh; 
     display: flex;
