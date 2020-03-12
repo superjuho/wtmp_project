@@ -83,6 +83,10 @@ header {
     margin-left: 2vw;
 }
 
+.window_big > .trainStopName {
+    margin: 0;
+}
+
 .window_small_1 > .hsl-data {
     width: 35vw;
     height: 34vh;
