@@ -11,15 +11,16 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
+    position: fixed;
 }
 
-/*#backgroundVideo {
+#backgroundVideo {
     position: fixed;
     top: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}*/
+    left: 0;
+    max-height: 100%;
+}
 
 .header h1 {
     font-size: 3vw;
@@ -44,6 +45,9 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position:fixed;
+    top: 15vh;
+    bottom: 5vh;
 }
 
 .container_small {
@@ -56,11 +60,11 @@ header {
 .window_big {
     display: flex;
     width: 55vw;
-    height: 80vh;
     border: 2px solid orange;
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
     overflow: hidden;
+    margin: 10px;
 }
 
 .window_small_1 {
@@ -70,7 +74,7 @@ header {
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
     overflow: hidden;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     background: #ffffff;
 }
@@ -83,6 +87,7 @@ header {
     box-shadow: 4px 6px 18px #888888;
     overflow: hidden;
     background: #ffffff;
+    margin: 10px;
 }
 
 .hsl-data {
