@@ -13,13 +13,13 @@ header {
     flex-grow: 1;
 }
 
-#backgroundVideo {
+/*#backgroundVideo {
     position: fixed;
     top: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-}
+}*/
 
 .header h1 {
     font-size: 3vw;
@@ -95,6 +95,14 @@ header {
     align-items: center;
 }
 
+.trainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 20vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .window_big > .hsl-data {
     width: 55vw;
     height: 80vh;
@@ -104,8 +112,6 @@ header {
 .stopElement {
     position: relative;
     float: right;
-    width: 20vw;
-    height: 23vh;
     margin-left: 0.6vw;
     margin-bottom: 1vh;
 }
@@ -117,36 +123,54 @@ header {
 .busStopName {
     margin: 0;
     margin-bottom: 0.5vh;
-    margin-top: 0.5vh;
+    /*margin-top: 0.5vh;*/
 }
 
 .busStopElement {
     display: flex;
-    width: 18vw;
-    height: 80vh;
     flex-direction: column;
     display: inline-block;
     align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.window_small_1 > .hsl-data {
-    width: 35vw;
+.window_small_1 > .hsl-data { 
     height: 39vh;
     font-size: 1rem;
 }
 
-.window_small_1 > .hsl-data div {
-    width: 12vw;
+.window_small_1 > .hsl-data > .trainContainer {
+    width: 15vw;
+    height: 34vh;
+    justify-content: center;
+}
+
+.window_small_1 > .hsl-data > .busStopElement {
+    justify-content: center;
+}
+
+.window_small_1 > .hsl-data > .busStopElement > .busHeader {
+    font-size: 0.7rem;
 }
 
 .window_small_2 > .hsl-data {
-    width: 35vw;
     height: 39vh;
     font-size: 1rem;
 }
 
-.window_small_2 > .hsl-data div {
-    width: 12vw;
+.window_small_2 > .hsl-data > .trainContainer{
+    width: 15vw;
+    height: 34vh;
+    justify-content: center;
+}
+
+.window_small_2 > .hsl-data > .busStopElement {
+    justify-content: center;
+}
+
+.window_small_2 > .hsl-data > .busStopElement > .busHeader {
+    font-size: 0.7rem;
 }
 
 .lunchElement {
