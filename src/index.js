@@ -60,8 +60,8 @@ const displayHSLDataByLocation = () => {
         let y = 0;
         for (let x = 0; x < 3; x++) {
           nearStops[i] += `<div class="busHeader"><b>${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.routeShortName}</b></div>` 
-          +`<div class="destination"> to ${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.tripHeadsign} </div>` + ' '
-          + `<div class="arrivalTime">${HSLData.getTime(answer[i].node.stop.stoptimesWithoutPatterns[y].realtimeDeparture)}</div>`;
+          +`<div class="destination"> to ${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.tripHeadsign}` + ' '
+          + `${HSLData.getTime(answer[i].node.stop.stoptimesWithoutPatterns[y].realtimeDeparture)}</div>`;
           y++;
         }
         
