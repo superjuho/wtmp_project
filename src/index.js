@@ -162,7 +162,7 @@ alert("shit updated!");
 
 const update = () => {
   setInterval(function updateShit(){
-    //carouselMagic.carousel();
+    carouselMagic.carousel();
     const container = document.querySelector('.hsl-data');
     const lunchContainer = document.querySelector('.lunchContainer');
     const bulletinContainer = document.querySelector('.bulletinContainer');
