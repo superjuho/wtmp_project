@@ -169,7 +169,7 @@ const update = () => {
     const trainContainer = document.createElement('div');
     trainContainer.className = "trainContainer";
     console.log('testiElementti luotu');
-    container.appendChild(testiElement);
+    container.appendChild(trainContainer);
     console.log('testiElementti laitettu HSL-datan sisään');
     container.innerHTML = '';
     lunchContainer.innerHTML = '';
