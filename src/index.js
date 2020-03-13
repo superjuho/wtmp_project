@@ -59,7 +59,7 @@ const displayHSLDataByLocation = () => {
         console.log(answer[i].node.stop.name);
         let y = 0;
         for (let x = 0; x < 3; x++) {
-          nearStops[i] += `<div class="busHeader"><b>${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.routeShortName}</b>` +' ' 
+          nearStops[i] += `<div class="busHeader"><b><i class="fas fa-bus"></i> ${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.routeShortName}</b>` +' ' 
           +` to ${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.tripHeadsign}` + ' '
           + `${HSLData.getTime(answer[i].node.stop.stoptimesWithoutPatterns[y].realtimeDeparture)}</div>`;
           y++;
@@ -85,14 +85,15 @@ const displayHSLDataByStopId = (container, stopId) => {
   fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
     console.log('hsl data response', response.data.stop);
     const stop = response.data.stop;
-    stopElement.innerHTML = `<h4 class="trainStopName">${stop.name}</h4><ul>`;
+    stopElement.innerHTML = `<h4 class="trainStopName">${stop.name}</h4>`;
     for (const ride of stop.stoptimesWithoutPatterns) {
-      stopElement.innerHTML += `<b>${ride.trip.routeShortName}</b>
+      stopElement.innerHTML += `<b><i class="fas fa-train"></i>
+      ${ride.trip.routeShortName}</b>
        ${ride.headsign !== null ? ride.headsign : ride.trip.tripHeadsign}
        ${HSLData.getTime(ride.scheduledDeparture)} <br>
       </li>`;
     }
-    stopElement.innerHTML += `</ul>`;
+    stopElement.innerHTML += ` `;
     container.appendChild(stopElement);
   });
   // TODO: error handling, what happens when new data not available?
@@ -119,7 +120,7 @@ const getLunch = () => {
   }
 
 const bulletin = () => {
-  const bullet = '<img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>';
+  const bullet = '<img src="assets/fulbright.png"></img>';
   const bulletElement = document.createElement('div');
   const bulletinContainer = document.querySelector('.bulletinContainer');
   bulletElement.innerHTML = bullet;
