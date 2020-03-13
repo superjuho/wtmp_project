@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    height: 20vh; 
+    height: 15vh; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,7 +27,7 @@ header {
 }
 
 .date {
-    font-size: 3vw;
+    font-size: 3.4em;
     font-family: 'Karla', sans-serif;
 }
 
@@ -51,7 +51,7 @@ header {
 .window_big {
     display: flex;
     width: 55vw;
-    height: 70vh;
+    height: 80vh;
     border: 2px solid orange;
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
@@ -60,26 +60,26 @@ header {
 
 .window_small_1 {
     width: 35vw;
-    height: 34vh;
+    height: 39vh;
     border: 2px solid grey;
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .window_small_2 {
     width: 35vw;
-    height: 34vh;
+    height: 39vh;
     border: 2px solid grey;
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
     overflow: hidden;
 }
 
-.window_big > .hsl-data {
+.hsl-data {
     padding: 10px;
-    width: 55vw;
-    height: 70vh;
     background-color: #007AC9;
     display: flex;
     flex-direction: column;
@@ -88,16 +88,19 @@ header {
     align-items: center;
 }
 
-.stopElement {
-    float: right;
+.window_big > .hsl-data {
+    width: 55vw;
+    height: 80vh;
+    font-size: 1.6em;
 }
 
-.window_big > .hsl-data > .stopElement {
+.stopElement {
     position: relative;
-    width: 15vw;
-    /*height: 30vh;*/
-    margin-left: 2vw;
-    margin-bottom: 0.5vh;
+    float: right;
+    width: 20vw;
+    height: 23vh;
+    margin-left: 0.6vw;
+    margin-bottom: 1vh;
 }
 
 .trainStopName {
@@ -112,68 +115,56 @@ header {
 
 .busStopElement {
     display: flex;
-    width: 11.8vw;
-    height: 70vh;
+    width: 18vw;
+    height: 80vh;
     flex-direction: column;
-    flex-wrap: wrap;
     display: inline-block;
     align-items: center;
 }
 
 .busStopElement div {
-    display: inline-block;
+    
 }
 
 .busStopElement > .busHeader {
-    position: relative;
-    left: 0;
+    
 }
-.busStopElement > .arrivalTime, .destination {
-    display: inline-block;
+.busStopElement > .busHeader .destination {
+    
 }
+
 .window_small_1 > .hsl-data {
     width: 35vw;
     height: 34vh;
-    background-color: #007AC9;
-    display: flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    overflow: hidden;
 }
 
 .window_small_1 > .hsl-data div {
     width: 15vw;
     height: 15vh;
-    margin-left: 1vw;
 }
 
 .window_small_2 > .hsl-data {
     width: 35vw;
     height: 34vh;
-    background-color: #007AC9;
-    display: flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    overflow: hidden;
 }
 
 .window_small_2 > .hsl-data div {
     width: 15vw;
     height: 15vh;
-    margin-left: 1vw;
 }
 
 .lunchElement {
     margin: 0;
 }
 
+.menuHeader {
+    margin-top: 0.5vh;
+    margin-bottom: 0.6vh;
+}
+
 .category {
     margin: 0;
-    
+
 }
 
 .price {
@@ -181,12 +172,12 @@ header {
 }
 
 .weatherwidget-io {
- width: 420px;
+    width: 420px;
 }
 
 .window_big > .lunchContainer {
     width: 30vw;
-    height: 70vh;
+    height: 80vh;
     padding-left: 2vw;
 }
 
@@ -198,18 +189,19 @@ header {
 }
 .window_small_1 > .lunchContainer {
     width: 30vw;
-    height: 34vh;
+    height: 39vh;
+    margin: 0;
     padding-left: 1vw;
 }
 
 .window_small_2 > .lunchContainer {
     width: 30vw;
-    height: 34vh;
+    height: 39vh;
     padding-left: 1vw;
 }
 
 .lunchContainer {
-    margin:0;
+    margin: 0;
 }
 
 .lunchMenu {
@@ -230,30 +222,30 @@ header {
 
 .window_big > .bulletinContainer {
     width: 55vw;
-    height: 70vh;
+    height: 80vh;
 }
 
 .window_small_1 > .bulletinContainer {
     width: 35vw;
-    height: 34vh;
+    height: 39vh;
 }
 
 .window_small_2 > .bulletinContainer {
     width: 35vw;
-    height: 34vh;
+    height: 39vh;
 }
 
 .window_big > .bulletinContainer img{
     width: 55vw;
-    height: 70vh;
+    height: 80vh;
 }
 
 .window_small_1 > .bulletinContainer img{
     width: 35vw;
-    height: 34vh;
+    height: 39vh;
 }
 
 .window_small_2 > .bulletinContainer img{
     width: 35vw;
-    height: 34vh;
+    height: 39vh;
 }
