@@ -160,7 +160,7 @@ console.log("Shit updated");
 alert("shit updated!");
 } */
 
-/*const update = () => {
+const update = () => {
   setInterval(function updateShit(){
     //carouselMagic.carousel();
     const container = document.querySelector('.hsl-data');
@@ -176,9 +176,9 @@ alert("shit updated!");
     getLunch();
     bulletin();
       console.log("Shit updated");
-    }, 100000);
-}  */
-    const container = document.querySelector('.hsl-data');
+    }, 15000);
+}  
+  /*  const container = document.querySelector('.hsl-data');
     const lunchContainer = document.querySelector('.lunchContainer');
     const bulletinContainer = document.querySelector('.bulletinContainer');
     container.innerHTML = '';
@@ -190,6 +190,6 @@ alert("shit updated!");
     displayHSLDataByStopId(container, 4150551); // Myyrmäki
     getLunch();
     bulletin();
-      console.log("Shit updated");
+      console.log("Shit updated");*/
 
-//update();
+update();
