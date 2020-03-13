@@ -59,8 +59,8 @@ const displayHSLDataByLocation = () => {
         console.log(answer[i].node.stop.name);
         let y = 0;
         for (let x = 0; x < 3; x++) {
-          nearStops[i] += `<div class="busHeader"><b>${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.routeShortName}</b></div>` 
-          +`<div class="destination"> to ${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.tripHeadsign}` + ' '
+          nearStops[i] += `<div class="busHeader"><b>${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.routeShortName}</b>` +' ' 
+          +` to ${answer[i].node.stop.stoptimesWithoutPatterns[y].trip.tripHeadsign}` + ' '
           + `${HSLData.getTime(answer[i].node.stop.stoptimesWithoutPatterns[y].realtimeDeparture)}</div>`;
           y++;
         }
