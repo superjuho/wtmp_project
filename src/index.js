@@ -166,13 +166,19 @@ const update = () => {
     const container = document.querySelector('.hsl-data');
     const lunchContainer = document.querySelector('.lunchContainer');
     const bulletinContainer = document.querySelector('.bulletinContainer');
+    const trainContainer = document.createElement('div');
+    trainContainer.className = "trainContainer";
+    console.log('testiElementti luotu');
+    container.appendChild(testiElement);
+    console.log('testiElementti laitettu HSL-datan sisään');
     container.innerHTML = '';
     lunchContainer.innerHTML = '';
     bulletinContainer.innerHTML = '';
     updateDate();
     displayHSLDataByLocation();
-    displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
-    displayHSLDataByStopId(container, 4150551); // Myyrmäki
+    displayHSLDataByStopId(trainContainer, 4150501); // Myyrmäki 2
+    displayHSLDataByStopId(trainContainer, 4150551); // Myyrmäki
+    container.appendChild(trainContainer);
     getLunch();
     bulletin();
       console.log("Shit updated");
