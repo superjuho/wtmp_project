@@ -13,6 +13,14 @@ header {
     flex-grow: 1;
 }
 
+#backgroundVideo {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 .header h1 {
     font-size: 3vw;
     width: 25vw;
@@ -75,9 +83,9 @@ header {
     background-color: #007AC9;
     display: flex;
     flex-direction: column;
-    flex-flow: column wrap;
-    align-content: flex-start;
-    font-size: 1.2rem;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    align-items: center;
 }
 
 .stopElement {
@@ -86,9 +94,10 @@ header {
 
 .window_big > .hsl-data > .stopElement {
     position: relative;
-    width: 20vw;
+    width: 15vw;
     /*height: 30vh;*/
     margin-left: 2vw;
+    margin-bottom: 0.5vh;
 }
 
 .trainStopName {
@@ -97,13 +106,31 @@ header {
 
 .busStopName {
     margin: 0;
+    margin-bottom: 0.5vh;
+    margin-top: 0.5vh;
 }
 
 .busStopElement {
     display: flex;
-    width: 200px;
+    width: 11.8vw;
+    height: 70vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: inline-block;
+    align-items: center;
 }
 
+.busStopElement div {
+    display: inline-block;
+}
+
+.busStopElement > .busHeader {
+    position: relative;
+    left: 0;
+}
+.busStopElement > .arrivalTime, .destination {
+    display: inline-block;
+}
 .window_small_1 > .hsl-data {
     width: 35vw;
     height: 34vh;
