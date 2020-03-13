@@ -26,6 +26,10 @@ header {
     width: 25vw;
 }
 
+.locationName {
+    margin: 0;
+    font-size: 2.6rem;
+}
 .date {
     font-size: 3.4em;
     font-family: 'Karla', sans-serif;
@@ -67,6 +71,7 @@ header {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    background: #ffffff;
 }
 
 .window_small_2 {
@@ -76,6 +81,7 @@ header {
     border-radius: 4px;
     box-shadow: 4px 6px 18px #888888;
     overflow: hidden;
+    background: #ffffff;
 }
 
 .hsl-data {
@@ -86,6 +92,7 @@ header {
     flex-wrap: wrap;
     font-size: 1.4rem;
     align-items: center;
+    te
 }
 
 .window_big > .hsl-data {
@@ -120,17 +127,6 @@ header {
     flex-direction: column;
     display: inline-block;
     align-items: center;
-}
-
-.busStopElement div {
-    
-}
-
-.busStopElement > .busHeader {
-    
-}
-.busStopElement > .busHeader .destination {
-    
 }
 
 .window_small_1 > .hsl-data {
@@ -171,6 +167,15 @@ header {
     margin: 0;
 }
 
+.mealTitle {
+    width: 10vw;
+}
+.properties {
+    width: 10vw;
+    position: relative;
+    float: right;
+}
+
 .weatherwidget-io {
     width: 420px;
 }
@@ -192,12 +197,14 @@ header {
     height: 39vh;
     margin: 0;
     padding-left: 1vw;
+    font-size: 0.95rem;
 }
 
 .window_small_2 > .lunchContainer {
     width: 30vw;
     height: 39vh;
     padding-left: 1vw;
+    font-size: 0.95rem;
 }
 
 .lunchContainer {
