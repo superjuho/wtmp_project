@@ -1,7 +1,7 @@
 {
-  "name": "wtmp-starter",
+  "name": "superjuho",
   "version": "1.0.0",
-  "description": "Simple boilerplate for webpack powered projects",
+  "description": "mystuff",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
-  "author": "mattpe",
+  "author": "superjuho",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",

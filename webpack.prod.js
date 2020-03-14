@@ -13,6 +13,7 @@ module.exports = merge(common, {
           drop_console: true
         },
       }
+      //super
     })],
   },
 });
