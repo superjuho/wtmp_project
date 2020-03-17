@@ -4,7 +4,7 @@ const bulletinContainer = document.querySelector('.bulletinContainer');
 
 let x = 1;
 
-const carousel = () => {
+const carousel = () => { // Carousel spins the content of windows around so everything can be viewed in the big window
     if (x === 1) {
         console.log("Case 1");
         container.className =

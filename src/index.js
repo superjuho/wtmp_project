@@ -44,7 +44,7 @@ import sodexoData from './modules/sodexo-lunch-data';
 import carouselMagic from './modules/carousel';
 
 
-const displayHSLDataByLocation = () => {
+const displayHSLDataByLocation = () => {                                                                // getting near bus stops information, and realtimeDeparture. 
   console.log("täällä ollaan");
   const busStopElement = document.createElement('div');
   busStopElement.className = "busStopElement";
@@ -78,7 +78,7 @@ const displayHSLDataByLocation = () => {
  * @param {Object} container - target DOM element container
  * @param {number} stopId - id number of the hsl stop
  */
-const displayHSLDataByStopId = (container, stopId) => {
+const displayHSLDataByStopId = (container, stopId) => {                                       // getting information on the trains from myyrmäki's station.
   const stopElement = document.createElement('div');
   stopElement.className = "stopElement";
   const queryData = HSLData.getQueryForNextRidesByStopId(stopId);
@@ -96,10 +96,9 @@ const displayHSLDataByStopId = (container, stopId) => {
     stopElement.innerHTML += ` `;
     container.appendChild(stopElement);
   });
-  // TODO: error handling, what happens when new data not available?
 };
 
-const getLunch = () => {
+const getLunch = () => {                                                              // getting lunch information 
   sodexoData.getSodexoLunchMenu(dateString)
    .then((data) => {
        var i, lunchMenu = [];
@@ -119,7 +118,7 @@ const getLunch = () => {
    });
   }
 
-const bulletin = () => {
+const bulletin = () => {                                                          // bullet information window for changing stuff. 
   const bullet = '<img src="assets/fulbright.png"></img>';
   const bulletElement = document.createElement('div');
   const bulletinContainer = document.querySelector('.bulletinContainer');
@@ -130,47 +129,17 @@ const bulletin = () => {
 
 
 
-/* const queryDataByLocation = () => {
-    const stopElement = document.createElement('div');
-    const queryData = HSLData.queryDataByLocation();
-    fetchPost(HSLData.url, 'application/graphql', queryData).then((response) => {
-        console.log('hsl data response', response.data.nearest.edges.node.place.stop);
-    });
-}; */
 
 
-
-// Fetch and show HSL data
-/*displayHSLDataByStopId(container, 4150296); // Leiritie 2
-displayHSLDataByStopId(container, 4150201); // Leiritie
-displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
-displayHSLDataByStopId(container, 4150551); // Myyrmäki
-getLunch();*/
-
-/*const updateShit = () => {
-container.innerHTML = '';
-lunchContainer.innerHTML = '';
-updateDate();
-displayHSLDataByStopId(container, 4150296); // Leiritie 2
-displayHSLDataByStopId(container, 4150201); // Leiritie
-displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
-displayHSLDataByStopId(container, 4150551); // Myyrmäki
-getLunch();
-console.log("Shit updated");
-alert("shit updated!");
-} */
-
-const update = () => {
+const update = () => {                                                          // update function updates the information every 15 seconds. 
   setInterval(function updateShit(){
-    carouselMagic.carousel();
+    carouselMagic.carousel();                                                   // First carousel spins the stuff to right place and then information is updated.
     const container = document.querySelector('.hsl-data');
     const lunchContainer = document.querySelector('.lunchContainer');
     const bulletinContainer = document.querySelector('.bulletinContainer');
     const trainContainer = document.createElement('div');
     trainContainer.className = "trainContainer";
-    console.log('testiElementti luotu');
     container.appendChild(trainContainer);
-    console.log('testiElementti laitettu HSL-datan sisään');
     container.innerHTML = '';
     lunchContainer.innerHTML = '';
     bulletinContainer.innerHTML = '';
@@ -181,21 +150,8 @@ const update = () => {
     container.appendChild(trainContainer);
     getLunch();
     bulletin();
-      console.log("Shit updated");
     }, 15000);
 }  
-  /*  const container = document.querySelector('.hsl-data');
-    const lunchContainer = document.querySelector('.lunchContainer');
-    const bulletinContainer = document.querySelector('.bulletinContainer');
-    container.innerHTML = '';
-    lunchContainer.innerHTML = '';
-    bulletinContainer.innerHTML = '';
-    updateDate();
-    displayHSLDataByLocation();
-    displayHSLDataByStopId(container, 4150501); // Myyrmäki 2
-    displayHSLDataByStopId(container, 4150551); // Myyrmäki
-    getLunch();
-    bulletin();
-      console.log("Shit updated");*/
+  
 
 update();

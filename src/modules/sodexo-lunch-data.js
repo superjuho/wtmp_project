@@ -1,6 +1,6 @@
 
     
-    const getSodexoLunchMenu = async (date) => {
+    const getSodexoLunchMenu = async (date) => {            // basic data from sodexo handling.
         let response;
         try {
             response = await fetch(`https://www.sodexo.fi/ruokalistat/output/daily_json/152/${date}`);

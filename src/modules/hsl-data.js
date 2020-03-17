@@ -21,7 +21,7 @@ const queryDataByName = `{
   }
 }`;
 
-// a test query with hardcoded coordinates of Myyrmäki campus
+// a working query with hardcoded coordinates of Myyrmäki campus
 const queryDataByLocation = `{
   stopsByRadius(lat: ${60.2585632}, lon: ${24.8446747}, radius: 500, first: 6) {
     edges {
